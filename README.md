@@ -1,21 +1,21 @@
-# 🧾 Flask POS App
+# Flask POS App
 
 A simple, responsive **Point of Sale (POS)** web application built using **Flask (Python)** and **MySQL**. This system allows businesses to manage product inventory, process sales and purchases, and keep track of transactions in real-time.
 
 ---
 
-## 🔧 Features
+## Features
 
-- 📦 **Product Management**: Add, update, and delete products.
-- 🛒 **Sales & Purchase Transactions**: Scan or input product codes to add to cart.
-- 🧮 **Real-time Totals**: Automatically calculates totals and updates item quantities.
-- 📊 **Dashboard**: Overview of inventory, sales, and purchases.
-- 👥 **User Authentication**: Secure login system for authorized access.
-- 📄 **Reports**: View and export transaction history.
+-  **Product Management**: Add, update, and delete products.
+-  **Sales & Purchase Transactions**: Scan or input product codes to add to cart.
+- **Real-time Totals**: Automatically calculates totals and updates item quantities.
+- **Dashboard**: Overview of inventory, sales, and purchases.
+- **User Authentication**: Secure login system for authorized access.
+-  **Reports**: View and export transaction history.
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - **Backend**: Flask (Python)
 - **Database**: MySQL
@@ -24,7 +24,7 @@ A simple, responsive **Point of Sale (POS)** web application built using **Flask
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
