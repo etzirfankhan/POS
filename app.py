@@ -15,6 +15,7 @@ def receive_data():
     
 
 @app.route('/')
+<<<<<<< HEAD
 def home():
     return render_template('home.html')
 
@@ -22,6 +23,10 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
+=======
+def hello_world():
+    return render_template("login.html")
+>>>>>>> b06ad2e4dc2cafa6d921e669b3c1f84ef9efc609
 
 
 if __name__ == '__main__':
