@@ -1,32 +1,39 @@
-from flask import Flask,render_template,request
-import requests
+from flask import Flask,render_template
+from flask_wtf import FlaskForm
+from wtforms.fields.simple import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import InputRequired
 
-
-
-
-# Initialize the Flask application
+#------------------------------Initialize flask app------------------------------------------------------
 app = Flask(__name__)
+app.secret_key = 'Key for securely sending and receiving data'
 
-@app.route("/login",methods=["POST"])
-def receive_data():
-    name = request.form.get('username')
-    password = request.form.get('password')
-    return f"Name: {name}, Password: {password}"
-    
 
-@app.route('/')
-<<<<<<< HEAD
-def home():
+#-------------------------------Creating login form class-------------------------------------------------
+class Login(FlaskForm):
+    name = StringField(label="Name",render_kw={'placeholder':'Name'},validators=[InputRequired()])
+    password = PasswordField(label='Password',render_kw={'placeholder':'Password'},validators=[InputRequired()])
+    save = BooleanField(label='Remember Password?___')
+    submit = SubmitField(label='Login')
+
+#----------------------------------Routing login form to users-----------------------------------------------
+@app.route("/", methods = ['post','get'])
+def login_page():
+    login_form = Login()
+    if login_form.validate_on_submit():
+        return render_template('home.html')
+    return render_template('login.html',form = login_form)
+
+
+#-------------------------------Redirecting users to homepage after login page---------------------------
+@app.route('/home',methods = ['post'])
+def homepage():
     return render_template('home.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    return render_template('login.html')
-=======
-def hello_world():
-    return render_template("login.html")
->>>>>>> b06ad2e4dc2cafa6d921e669b3c1f84ef9efc609
+
+
+
+
 
 
 if __name__ == '__main__':
